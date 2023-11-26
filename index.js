@@ -90,10 +90,6 @@ app.post('/api/persons', (request, response) => {
   response.json(person)
 })
 
-// app.get('*', (req, res) => {
-//   res.sendFile('index.html', { root: 'dist' });
-// });
-
 app.get('/api/persons', (req, res) => {
   res.json(persons)
 })
@@ -130,7 +126,6 @@ app.get('/info', (request, response) =>
   `);
 })
 
-// const PORT = 3001
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
