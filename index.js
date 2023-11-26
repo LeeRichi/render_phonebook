@@ -46,9 +46,9 @@ app.use(
   })
 );
 
-// app.get('/', (req, res) => {
-//   res.send('<h1>Hello World!</h1>')
-// })
+app.get('/', (req, res) => {
+  res.send('<h1>Hello World!</h1>')
+})
 
 const generateId = () =>
 {
@@ -90,9 +90,9 @@ app.post('/api/persons', (request, response) => {
   response.json(person)
 })
 
-app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: 'dist' });
-});
+// app.get('*', (req, res) => {
+//   res.sendFile('index.html', { root: 'dist' });
+// });
 
 app.get('/api/persons', (req, res) => {
   res.json(persons)
