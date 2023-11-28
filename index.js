@@ -74,23 +74,14 @@ app.post('/api/persons', (request, response) => {
     })
   }
 
-  if (Person.some((person) => person.name === body.name))
-  {
-    return response.status(400).json({ 
-      error: 'name must be unique' 
-    })
-  }
-
-  const person = {
-    // id: generateId(),
+  const person = new Person({
     name: body.name,
     number: body.number,
-    date: new Date(),
-  }
+  })
 
-  Person = Person.concat(person)
-
-  response.json(person)
+  person.save().then(savedPerson => {
+    response.json(savedPerson)
+  })
 })
 
 app.get('/api/persons', (req, res) => {

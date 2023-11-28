@@ -16,10 +16,10 @@ mongoose.connect(url)
   })
 
 const personSchema = new mongoose.Schema({
-    id: Number,
+    // id: Number,
     name: String,
     number: String,
-    date: { type: Date, default: Date.now }
+    // date: { type: Date, default: Date.now }
 })
 
 personSchema.set('toJSON', {
