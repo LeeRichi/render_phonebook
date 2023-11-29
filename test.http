@@ -1,8 +1,6 @@
-
-POST http://localhost:3001/api/persons
+GET http://localhost:3001/api/persons
 Content-Type: application/json
-
 {
-    "name": "pig",
-    "number": "123"
+    "name": "rich",
+    "number": "1234"
 }
