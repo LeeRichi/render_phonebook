@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-require('dotenv').config();
+require('dotenv').config()
 
 mongoose.set('strictQuery', false)
 
@@ -9,7 +9,7 @@ console.log('connecting to', url)
 
 mongoose.connect(url)
   .then(result => {
-    console.log('connected to MongoDB')
+    console.log('connected to MongoDB' + result)
   })
   .catch((error) => {
     console.log('error connecting to MongoDB:', error.message)
@@ -25,13 +25,13 @@ const personSchema = new mongoose.Schema({
     type: String,
     validate: {
       validator: function (v) {
-        return /^\d{2,3}-\d+$/.test(v);
+        return /^\d{2,3}-\d+$/.test(v)
       },
       message: (props) => `${props.value} is not a valid phone number!`,
     },
     required: true,
   },
-});
+})
 
 personSchema.set('toJSON', {
   transform: (document, returnedObject) => {
